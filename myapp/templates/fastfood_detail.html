@@ -1,0 +1,17 @@
+
+{% extends 'base.html' %}
+
+{% block title %}{{ fastfood.name }}{% endblock %}
+
+{% block content %}
+    <h1>{{ fastfood.name }}</h1>
+    <p>{{ fastfood.description }}</p>
+    <h2>Menu</h2>
+    <ul>
+    {% for item in fastfood.menuitem_set.all %}
+        <li>{{ item.name }} - {{ item.price }}</li>
+    {% empty %}
+        <li>No menu items found.</li>
+    {% endfor %}
+    </ul>
+{% endblock %}
