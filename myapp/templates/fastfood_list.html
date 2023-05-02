@@ -1,14 +1,17 @@
-{% extends 'base.html' %}
+{% extends 'home.html' %}
 
 {% block title %}Fast Food{% endblock %}
 
 {% block content %}
     <h1>Fast Food</h1>
     <ul>
-    {% for fastfood in fastfoods %}
+    {% for fastfood in fastfood %}
         <li><a href="{{ fastfood.get_absolute_url }}">{{ fastfood.name }}</a></li>
     {% empty %}
         <li>No fast food found.</li>
     {% endfor %}
     </ul>
 {% endblock %}
+
+
+

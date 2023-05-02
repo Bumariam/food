@@ -1,11 +1,11 @@
-{% extends 'base.html' %}
+{% extends 'home.html' %}
 
   {% block title %}Restaurants{% endblock %}
 
   {% block content %}
       <h1>Restaurants</h1>
       <ul>
-      {% for restaurant in restaurants %}
+      {% for restaurant in restaurant %}
           <li><a href="{{ restaurant.get_absolute_url }}">{{ restaurant.name }}</a></li>
       {% empty %}
           <li>No restaurants found.</li>
