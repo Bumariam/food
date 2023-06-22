@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Restaurant, FastFood, Caffeine, MenuItem
 
-
+# view
 def home(request):
     caffeine_list = Caffeine.objects.all()
     fastfood_list = FastFood.objects.all()
@@ -9,6 +9,7 @@ def home(request):
     menu_items = MenuItem.objects.all()
     context = {
         'caffeine_list': caffeine_list,
+        'caffeine_detail': caffeine_detail,
         'fastfood_list': fastfood_list,
         'restaurant_list': restaurant_list,
         'menu_items': menu_items,
@@ -35,8 +36,15 @@ def fastfood_list(request):
 
 def fastfood_detail(request, pk):
     fastfood = get_object_or_404(FastFood, pk=pk)
-    context = {'fastfood': fastfood}
+    menu_items = MenuItem.objects.filter(fastfood=fastfood)
+    context = {
+        'fastfood': fastfood,
+        'menu_items': menu_items,
+    }
     return render(request, 'fastfood_detail.html', context)
+
+
+
 
 
 def caffeine_list(request):
@@ -47,8 +55,13 @@ def caffeine_list(request):
 
 def caffeine_detail(request, pk):
     caffeine = get_object_or_404(Caffeine, pk=pk)
-    context = {'caffeine': caffeine}
+    menu_items = MenuItem.objects.filter(caffeine=caffeine)
+    context = {
+        'caffeine': caffeine,
+        'menu_items': menu_items,
+    }
     return render(request, 'caffeine_detail.html', context)
+
 
 
 

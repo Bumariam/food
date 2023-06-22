@@ -7,6 +7,7 @@
     <ul>
     {% for fastfood in fastfood %}
         <li><a href="{{ fastfood.get_absolute_url }}">{{ fastfood.name }}</a></li>
+
     {% empty %}
         <li>No fast food found.</li>
     {% endfor %}

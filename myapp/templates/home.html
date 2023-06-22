@@ -1,3 +1,4 @@
+<!--Home-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,9 +6,20 @@
 </head>
 <body>
     <div id="content">
+        <h1>Restaurant Project</h1>
+    <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'restaurant_list' %}">Restaurants</a></li>
+        <li><a href="{% url 'fastfood_list' %}">Fast Food</a></li>
+        <li><a href="{% url 'caffeine_list' %}">Caffeine</a></li>
+
+    </ul>
         {% block content %}{% endblock %}
     </div>
 
 </body>
+
+
+
 
 

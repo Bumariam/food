@@ -1,5 +1,6 @@
 from django.db import models
 
+# models
 # Create your models here.
 
 
@@ -29,11 +30,14 @@ class Caffeine(models.Model):
         return self.name
 
 
+
+
 class MenuItem(models.Model):
     name = models.CharField(max_length=100)
     category = models.CharField(max_length=50)
     description = models.TextField()
     price = models.DecimalField(max_digits=5, decimal_places=2)
+    image = models.ImageField(upload_to='photo', null=True, blank=True)
     restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE, null=True, blank=True)
     fastfood = models.ForeignKey(FastFood, on_delete=models.CASCADE, null=True, blank=True)
     caffeine = models.ForeignKey(Caffeine, on_delete=models.CASCADE, null=True, blank=True)
@@ -41,3 +45,12 @@ class MenuItem(models.Model):
     def __str__(self):
         return self.name
 
+class Photo(models.Model):
+    name = models.CharField(max_length=100)
+    restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE, null=True, blank=True)
+    fastfood = models.ForeignKey(FastFood, on_delete=models.CASCADE, null=True, blank=True)
+    caffeine = models.ForeignKey(Caffeine, on_delete=models.CASCADE, null=True, blank=True)
+    image = models.ImageField(upload_to='photo')
+
+    def __str__(self):
+        return self.name

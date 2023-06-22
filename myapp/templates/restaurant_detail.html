@@ -8,6 +8,7 @@
     <h2>Menu</h2>
     <ul>
     {% for item in restaurant.menuitem_set.all %}
+        <img src="{{ item.image.url }}" alt="{{ item.name }}">
         <li>{{ item.name }} - {{ item.price }}</li>
     {% empty %}
         <li>No menu items found.</li>

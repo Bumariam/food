@@ -7,6 +7,7 @@
       <ul>
       {% for restaurant in restaurant %}
           <li><a href="{{ restaurant.get_absolute_url }}">{{ restaurant.name }}</a></li>
+          <img src="{{ fastfood.image.url }}" alt="{{ fastfood.name }}">
       {% empty %}
           <li>No restaurants found.</li>
       {% endfor %}

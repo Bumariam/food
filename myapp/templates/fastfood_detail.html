@@ -1,5 +1,4 @@
-
-{% extends 'home.html' %}
+{% extends 'fastfood.html' %}
 
 {% block title %}{{ fastfood.name }}{% endblock %}
 
@@ -8,12 +7,12 @@
     <p>{{ fastfood.description }}</p>
     <h2>Menu</h2>
     <ul>
-    {% for item in fastfood.menuitem_set.all %}
+    {% for item in menu_items %}
+        <img src="{{ item.image.url }}" alt="{{ item.name }}">
         <li>{{ item.name }} - {{ item.price }}</li>
     {% empty %}
         <li>No menu items found.</li>
     {% endfor %}
     </ul>
 {% endblock %}
-
 
