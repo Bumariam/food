@@ -23,10 +23,22 @@ def restaurant_list(request):
     return render(request, 'restaurant_list.html', context)
 
 
+
+
 def restaurant_detail(request, pk):
     restaurant = get_object_or_404(Restaurant, pk=pk)
-    return render(request, 'restaurant_detail.html', {'restaurant': restaurant})
+    menu_items = MenuItem.objects.filter(restaurant=restaurant)
+    context = {
+        'restaurant': restaurant,
+        'menu_items': menu_items,
+    }
+    return render(request, 'restaurant_detail.html', context)
 
+
+# def restaurant_detail(request, pk):
+#     restaurant = get_object_or_404(Restaurant, pk=pk)
+#     return render(request, 'restaurant_detail.html', {'restaurant': restaurant})
+#
 
 def fastfood_list(request):
     fastfood = FastFood.objects.all()

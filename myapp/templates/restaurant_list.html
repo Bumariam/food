@@ -3,13 +3,14 @@
   {% block title %}Restaurants{% endblock %}
 
   {% block content %}
-      <h1>Restaurants</h1>
-      <ul>
-      {% for restaurant in restaurant %}
-          <li><a href="{{ restaurant.get_absolute_url }}">{{ restaurant.name }}</a></li>
-          <img src="{{ fastfood.image.url }}" alt="{{ fastfood.name }}">
+    <h1>Restaurants</h1>
+    <ul>
+    {% for restaurant in restaurant %}
+        <li><a href="{{ restaurant.get_absolute_url }}">{{ restaurant.name }}</a></li>
       {% empty %}
           <li>No restaurants found.</li>
       {% endfor %}
       </ul>
   {% endblock %}
+
+
