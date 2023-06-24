@@ -1,19 +1,21 @@
 <!--Home-->
+
+
 <!DOCTYPE html>
 <html>
 <head>
+    {% load static %}
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
-
+    <link rel="stylesheet" href="{% static 'myapp/styles.css' %}">
 </head>
 <body>
-    <div id="content">
-        <h1>Restaurant Project</h1>
+    <div id="content" >
+        <h1 style="color:#ffffff; font-size: 30pt">Food Project</h1>
     <ul>
-        <li><a href="{% url 'home' %}">Home</a></li>
-        <li><a href="{% url 'restaurant_list' %}">Restaurants</a></li>
-        <li><a href="{% url 'fastfood_list' %}">Fast Food</a></li>
-        <li><a href="{% url 'caffeine_list' %}">Caffeine</a></li>
+        <li><a href="{% url 'home' %}" style="color: #000000; font-size: 30pt; -webkit-text-stroke: 0.5px white;">Home</a></li>
+        <li><a href="{% url 'restaurant_list' %} " style="color: #000000; font-size: 30pt; -webkit-text-stroke: 0.5px white;">Restaurants</a></li>
+        <li><a href="{% url 'fastfood_list' %}" style="color: #000000; font-size: 30pt; -webkit-text-stroke: 0.5px white;">Fast Food</a></li>
+        <li><a href="{% url 'caffeine_list' %}" style="color: #000000; font-size: 30pt; -webkit-text-stroke: 0.5px white;">Caffeine</a></li>
 
     </ul>
         {% block content %}{% endblock %}

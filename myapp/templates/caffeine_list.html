@@ -4,10 +4,10 @@
 {% block title %}Caffeine{% endblock %}
 
 {% block content %}
-    <h1>Caffeine</h1>
+    <h1 style="color: #ffffff; font-size: 20pt;">Caffeine</h1>
     <ul>
     {% for caffeine in caffeine %}
-        <li><a href="{{ caffeine.get_absolute_url }}">{{ caffeine.name }}</a></li>
+        <li><a href="{{ caffeine.get_absolute_url }}" style="color: #ffffff; font-size: 15pt;">{{ caffeine.name }}</a></li>
     {% empty %}
         <li>No caffeine found.</li>
     {% endfor %}

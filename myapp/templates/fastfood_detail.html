@@ -1,17 +1,19 @@
 {% extends 'fastfood_list.html' %}
 
+{% load static %}
+
 {% block title %}{{ fastfood.name }}{% endblock %}
 
 {% block content %}
-    <h1>{{ fastfood.name }}</h1>
-    <p>{{ fastfood.description }}</p>
-    <h2>Menu</h2>
+    <h1 style="color:#ffffff">{{ fastfood.name }}</h1>
+    <p style="color:#ffffff">{{ fastfood.description }}</p>
+    <h2 style="color:#ffffff">Menu</h2>
     <ul>
     {% for item in menu_items %}
-        <img src="{{ item.image.url }}" alt="{{ item.name }}">
-        <li>{{ item.name }} - {{ item.price }}</li>
+        <img src="{{ item.image.url }}" alt="{{ item.name }}" style="color: #ffffff; font-size: 15pt;">
+        <li style="color: #ffffff; font-size: 10pt;">{{ item.name }} - {{ item.price }}</li>
     {% empty %}
-        <li>No menu items found.</li>
+        <li style="color: #ffffff; font-size: 15pt;">No menu items found.</li>
     {% endfor %}
     </ul>
 {% endblock %}

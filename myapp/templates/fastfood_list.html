@@ -3,10 +3,10 @@
 {% block title %}Fast Food{% endblock %}
 
 {% block content %}
-    <h1>Fast Food</h1>
+    <h1 style="color: #ffffff; font-size: 20pt;">Fast Food</h1>
     <ul>
     {% for fastfood in fastfood %}
-        <li><a href="{{ fastfood.get_absolute_url }}">{{ fastfood.name }}</a></li>
+        <li><a href="{{ fastfood.get_absolute_url }}" style="color: #ffffff; font-size: 15pt;">{{ fastfood.name }} </a></li>
 
     {% empty %}
         <li>No fast food found.</li>

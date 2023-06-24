@@ -4,14 +4,14 @@
 {% block title %}{{ caffeine.name }}{% endblock %}
 
 {% block content %}
-    <h1>{{ caffeine.name }}</h1>
-    <p>{{ caffeine.description }}</p>
-    <h2>Menu</h2>
+    <h1 style="color: #ffffff; font-size: 30pt; ">{{ caffeine.name }}</h1>
+    <p style="color:#ffffff">{{ caffeine.description }}</p>
+    <h2 style="color:#ffffff">Menu</h2>
     <ul>
     {% for item in menu_items %}
-        <li>{{ item.name }} - {{ item.price }}</li>
+        <li style="color: #ffffff; font-size: 15pt;">{{ item.name }} - {{ item.price }}</li>
     {% empty %}
-        <li>No menu items found.</li>
+        <li style="color: #ffffff; font-size: 15pt;">No menu items found.</li>
     {% endfor %}
     </ul>
 {% endblock %}
